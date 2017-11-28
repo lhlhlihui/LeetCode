@@ -1,16 +1,18 @@
 var checkPerfectNumber = function(num) {
-    var i = 2, sum = 1;
-    while (i * i <= num) {
-        if (num % i === 0) {
-            if (i * i === num) {
-                sum += i;
-            } else {
-                sum += i + num / i;
-            }
-        }
+    var sum = 1;
 
-        i++;
+    if (num === 1) {
+        return false;
     }
 
-    return num === 1 ?  false :  num === sum;
+    for (var i = 2; i * i <= num; ++i) {
+        if (num % i === 0) {
+            sum += i;
+            if (i * i !== num) {
+                sum += num / i;
+            }
+        }
+    }
+    
+    return sum === num;
 };
