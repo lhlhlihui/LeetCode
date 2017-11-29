@@ -5,7 +5,7 @@ var countPrimes = function(n) {
 
     var counter = 1;
     for (var i = 3; i < n; i += 2) {
-        if(isPrime(i)) {
+        if (isPrime(i)) {
             counter++;
         }
     }
