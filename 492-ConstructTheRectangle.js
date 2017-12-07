@@ -3,8 +3,7 @@ var constructRectangle = function(area) {
     var result = [];
     for (var i = tmp; ; i--) {
         if (area % i === 0) {
-            result.push(area / i);
-            result.push(i);
+            result.push(area / i, i);
             return result;
         }
     }
